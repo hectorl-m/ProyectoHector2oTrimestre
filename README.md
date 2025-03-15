@@ -28,7 +28,9 @@ Este proyecto es una aplicación de escritorio desarrollada con **Electron** y *
    ```
 
 **Amarillo**: Primero te dirijes a la carpeta donde quieres instalar el proyecto con cd 'nombreDirectorio'.
+
 **Azul Claro**: Ejecutas los comandos que te he dejado en el punto 1 de "Instalación", para clonar el repositorio del proyecto y dirijirte al mismo.
+
 **Verde**: Finalmente instalas las dependencias que te he dejado en el punto 2 de "Instalación", y todo estará listo para ejecutar el proyecto con el comando que te he dejado en el apartado de "Ejecución de la Aplicación".
 
 ![Instalacion del proyecto completo](InstalacionProyecto.png)
