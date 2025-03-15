@@ -16,6 +16,7 @@ Este proyecto es una aplicación de escritorio desarrollada con **Electron** y *
 
 ## 📥 **Instalación**
 
+**Aclaración**: La instalación debe realizarse desde una terminal *cmd*, desde *PS* no funcionará correctamente.
 1. **Clona el repositorio**:
    ```bash
    git clone https://github.com/hectorl-m/ProyectoHector2oTrimestre.git
