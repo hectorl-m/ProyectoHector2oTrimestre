@@ -23,7 +23,7 @@ Este proyecto es una aplicación de escritorio desarrollada con **Electron** y *
    ```
 2. **Instala las dependencias**:
    ```bash
-   npm install
+   npm install electron puppeteer
    ```
 
 ---
@@ -55,4 +55,4 @@ npm start
 Este proyecto es de uso educativo y no está destinado a uso comercial. Airbnb tiene políticas sobre web scraping, por lo que se recomienda usarlo con fines personales y de aprendizaje.
 
 📩 **Desarrollado por Héctor Larrosa Martínez**
-
+Contacto: heclarmar2@alu.edu.gva.es
