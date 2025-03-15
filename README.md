@@ -1,4 +1,4 @@
-## Creo que me he trabajado mucho el proyecto, pero sobretodo, he intentado que la documentación del proyecto sea muy clara e intuitiva indicando con capturas y pasos explicados con los comandos que hay que ejecutar en cada momento para poder hacer una correcta instalación del proyecto.
+## Creo que me he trabajado mucho el proyecto, tiene uno interfaz muy agradable y te muestra la informacion de forma correcta, pero sobretodo, he intentado que la documentación del proyecto sea muy clara e intuitiva, indicando con capturas y texto los pasos, explicados con los comandos que hay que ejecutar en cada momento para poder hacer una correcta instalación del proyecto.
 ## Por todo esto mi Nota esperada es un 9.
 
 # ProyectoHector2oTrimestre
