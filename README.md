@@ -1,5 +1,9 @@
 # ProyectoHector2oTrimestre
 
+## Creo que me he trabajado mucho el proyecto, pero sobretodo, he intentado que la documentación del proyecto sea muy clara e intuitiva indicando con capturas como hacer una correcta instalación del proyecto.
+# Nota esperada: 9
+ 
+
 ## 🏡 Aplicación de Escritorio con Electron y Puppeteer
 
 Este proyecto es una aplicación de escritorio desarrollada con **Electron** y **Puppeteer** que permite a los usuarios buscar alojamientos en **Airbnb** ingresando el nombre de una ciudad. La aplicación realiza web scraping y muestra los resultados de forma organizada.
@@ -9,7 +13,9 @@ Este proyecto es una aplicación de escritorio desarrollada con **Electron** y *
 ## 📌 **Características**
 
 ✅ **Interfaz intuitiva**: Permite ingresar una ciudad y buscar alojamientos disponibles.
+
 ✅ **Scraping dinámico**: Puppeteer extrae información de Airbnb en función de la ciudad introducida.
+
 ✅ **Visualización atractiva**: Los resultados se presentan con detalles como título, precio, calificación y un enlace directo a Airbnb.
 
 ---
