@@ -1,0 +1,16 @@
+{
+  "name": "proyectohector2otrimestre",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Héctor_LM",
+  "license": "ISC",
+  "description": "Scraper",
+  "dependencies": {
+    "electron": "^35.0.0",
+    "puppeteer": "^24.4.0"
+  }
+}

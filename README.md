@@ -1,26 +1,58 @@
 # ProyectoHector2oTrimestre
-# Aplicación de Escritorio con Electron y Puppeteer
 
-Esta es una aplicación de escritorio desarrollada con Electron y Puppeteer que permite a los usuarios introducir datos en un formulario y realizar web scraping en una página web específica.
+## 🏡 Aplicación de Escritorio con Electron y Puppeteer
 
-## Funcionalidad
+Este proyecto es una aplicación de escritorio desarrollada con **Electron** y **Puppeteer** que permite a los usuarios buscar alojamientos en **Airbnb** ingresando el nombre de una ciudad. La aplicación realiza web scraping y muestra los resultados de forma organizada.
 
-1. **Interfaz de Usuario**: La aplicación incluye un formulario donde el usuario puede introducir datos.
-2. **Web Scraping**: Utiliza Puppeteer para realizar web scraping en una página web basada en los datos introducidos por el usuario.
-3. **Presentación de Datos**: Los datos scrapeados se muestran de manera clara y estética dentro de la aplicación.
+---
 
-## Instalación y Ejecución
+## 📌 **Características**
 
-1. Clona este repositorio:
+✅ **Interfaz intuitiva**: Permite ingresar una ciudad y buscar alojamientos disponibles.
+✅ **Scraping dinámico**: Puppeteer extrae información de Airbnb en función de la ciudad introducida.
+✅ **Visualización atractiva**: Los resultados se presentan con detalles como título, precio, calificación y un enlace directo a Airbnb.
+
+---
+
+## 📥 **Instalación**
+
+1. **Clona el repositorio**:
    ```bash
    git clone https://github.com/hectorl-m/ProyectoHector2oTrimestre.git
    cd ProyectoHector2oTrimestre
+   ```
+2. **Instala las dependencias**:
+   ```bash
+   npm install
+   ```
 
+---
 
+## 🚀 **Ejecución de la Aplicación**
 
-   ### 10. Ejecución de la Aplicación
-
-Finalmente, para ejecutar la aplicación, usa el siguiente comando:
-
+Para iniciar la aplicación, usa el siguiente comando:
 ```bash
 npm start
+```
+
+---
+
+## 🛠 **Tecnologías Utilizadas**
+- **Electron.js**: Para crear la interfaz de escritorio.
+- **Puppeteer**: Para realizar web scraping en Airbnb.
+- **TailwindCSS**: Para mejorar el diseño de la interfaz.
+- **JavaScript**: Lenguaje de programación principal.
+
+---
+
+## 📷 **Capturas de Pantalla**
+
+**añadir imágenes de la aplicacion.**
+
+---
+
+## 📄 **Licencia**
+Este proyecto es de uso educativo y no está destinado a uso comercial. Airbnb tiene políticas sobre web scraping, por lo que se recomienda usarlo con fines personales y de aprendizaje.
+
+📩 **Desarrollado por Héctor Larrosa Martínez**
+
