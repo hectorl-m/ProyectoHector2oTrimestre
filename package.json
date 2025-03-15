@@ -10,7 +10,7 @@
   "license": "ISC",
   "description": "Scraper",
   "dependencies": {
-    "electron": "^35.0.0",
+    "electron": "^35.0.1",
     "puppeteer": "^24.4.0"
   },
   "repository": {
