@@ -48,11 +48,15 @@ npm start
 
 ## 📷 **Capturas de Pantalla**
 
-**añadir imágenes de la aplicacion.**
+![imgScraperAirbnb1](image-1.png)
+![imgScraperAirbnb2](image-2.png)
+![imgScraperAirbnb3](image-3.png)
+![imgScraperAirbnb4](image-4.png)
+![imgScraperAirbnb5](image-5.png)
 
 ---
 
 ## 📄 **Licencia**
 Este proyecto es de uso educativo y no está destinado a uso comercial. Airbnb tiene políticas sobre web scraping, por lo que se recomienda usarlo con fines personales y de aprendizaje.
 
-📩 **Desarrollado por Héctor Larrosa Martínez**
+📩 **Desarrollado por *Héctor Larrosa Martínez***
