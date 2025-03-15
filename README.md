@@ -1,8 +1,7 @@
-# ProyectoHector2oTrimestre
-
 ## Creo que me he trabajado mucho el proyecto, pero sobretodo, he intentado que la documentación del proyecto sea muy clara e intuitiva indicando con capturas como hacer una correcta instalación del proyecto.
 # Nota esperada: 9
- 
+
+# ProyectoHector2oTrimestre
 
 ## 🏡 Aplicación de Escritorio con Electron y Puppeteer
 
