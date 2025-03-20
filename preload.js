@@ -1,5 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electronAPI', {
-    startScraping: (city) => ipcRenderer.invoke('start-scraping', city)
+    startScraping: (formData) => ipcRenderer.invoke('start-scraping', formData)
 });

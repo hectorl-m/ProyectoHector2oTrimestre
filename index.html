@@ -7,12 +7,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full text-center">
         <h1 class="text-2xl font-bold text-gray-800 mb-4">🔍 Buscar alojamientos en Airbnb</h1>
         
+        <!-- Campo de ciudad -->
         <label for="city" class="block text-gray-700 font-medium text-left mb-2">Ciudad:</label>
         <input type="text" id="city" class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ej: Denia">
+        
+        <!-- Fechas de checkin y checkout -->
+        <div class="mb-4">
+            <label for="checkin" class="block text-gray-700 font-medium text-left mb-2">Fecha de llegada (checkin):</label>
+            <input type="date" id="checkin" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="checkout" class="block text-gray-700 font-medium text-left mb-2">Fecha de salida (checkout):</label>
+            <input type="date" id="checkout" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        
+        <!-- Cantidad de viajeros -->
+        <div class="mb-4 grid grid-cols-2 gap-4">
+            <div>
+                <label for="adults" class="block text-gray-700 font-medium text-left mb-2">Adultos:</label>
+                <input type="number" id="adults" min="1" value="1" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label for="children" class="block text-gray-700 font-medium text-left mb-2">Niños:</label>
+                <input type="number" id="children" min="0" value="0" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label for="infants" class="block text-gray-700 font-medium text-left mb-2">Bebés:</label>
+                <input type="number" id="infants" min="0" value="0" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label for="pets" class="block text-gray-700 font-medium text-left mb-2">Mascotas:</label>
+                <input type="number" id="pets" min="0" value="0" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+        </div>
         
         <button id="scrapeButton" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">
             Buscar
@@ -24,13 +54,22 @@
     <script>
         document.getElementById('scrapeButton').addEventListener('click', async () => {
             const city = document.getElementById('city').value.trim();
-            if (!city) {
-                alert("Por favor, introduce una ciudad.");
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const infants = document.getElementById('infants').value;
+            const pets = document.getElementById('pets').value;
+
+            if (!city || !checkin || !checkout) {
+                alert("Por favor, completa la ciudad y las fechas de llegada y salida.");
                 return;
             }
 
             document.getElementById('results').innerHTML = "<p class='text-gray-500'>Cargando...</p>";
-            const results = await window.electronAPI.startScraping(city);
+
+            const formData = { city, checkin, checkout, adults, children, infants, pets };
+            const results = await window.electronAPI.startScraping(formData);
 
             document.getElementById('results').innerHTML = results.map(r => 
                 `<div class="bg-white p-4 shadow rounded-lg mb-4">
@@ -42,6 +81,5 @@
             ).join("");
         });
     </script>
-
 </body>
 </html>

@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, contextBridge } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const puppeteer = require('puppeteer');
 
@@ -19,21 +19,29 @@ app.whenReady().then(() => {
     mainWindow.loadFile('index.html');
 });
 
-ipcMain.handle('start-scraping', async (event, city) => {
+ipcMain.handle('start-scraping', async (event, formData) => {
+    // Extraemos datos del formulario
+    const { city, checkin, checkout, adults, children, infants, pets } = formData;
     const formattedCity = encodeURIComponent(city);
-    const url = `https://www.airbnb.es/s/${formattedCity}/homes?refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2025-03-01&monthly_length=3&monthly_end_date=2025-06-01&price_filter_input_type=0&channel=EXPLORE&date_picker_type=flexible_dates&checkin=2025-02-15&checkout=2025-02-16&flexible_trip_dates%5B%5D=may&adults=2&source=structured_search_input_header&search_type=filter_change`;
+
+    // Construimos la URL con los parámetros (puedes agregar más parámetros según tus necesidades)
+    const url = `https://www.airbnb.es/s/${formattedCity}/homes?` +
+        `checkin=${checkin}&checkout=${checkout}` +
+        `&adults=${adults}&children=${children}&infants=${infants}&pets=${pets}` +
+        `&source=structured_search_input_header&search_type=filter_change`;
+
+    console.log(`Abriendo Airbnb en: ${city}...`);
+    console.log(`URL: ${url}`);
 
     const browser = await puppeteer.launch({ headless: true, slowMo: 100 });
     const page = await browser.newPage();
-
     await page.setViewport({ width: 1400, height: 800 });
-    console.log(`Abriendo Airbnb en: ${city}...`);
     
     await page.goto(url, { waitUntil: "networkidle2" });
-
     await page.waitForSelector(".c4mnd7m", { timeout: 60000 });
     console.log("Extrayendo datos...");
     
+    // Hacemos scroll para cargar más resultados (opcional)
     await page.evaluate(async () => {
         for (let i = 0; i < 5; i++) {
             window.scrollBy(0, window.innerHeight);
@@ -41,6 +49,7 @@ ipcMain.handle('start-scraping', async (event, city) => {
         }
     });
 
+    // Extraemos la información de cada anuncio
     const data = await page.evaluate(() => {
         return Array.from(document.querySelectorAll(".c4mnd7m")).map(listing => {
             const title = listing.querySelector("div[data-testid='listing-card-title']")?.innerText.trim() || "No title";
@@ -54,7 +63,6 @@ ipcMain.handle('start-scraping', async (event, city) => {
     });
 
     console.log("Datos obtenidos:", data);
-
     await browser.close();
     
     return data;
