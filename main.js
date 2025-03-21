@@ -57,10 +57,14 @@ ipcMain.handle('start-scraping', async (event, formData) => {
             const rating = listing.querySelector(".r4a59j5")?.innerText.trim() || "No rating";
             const linkElement = listing.querySelector("a");
             const link = linkElement ? `https://www.airbnb.es${linkElement.getAttribute("href")}` : "No link";
-
-            return { title, price, rating, link };
+    
+            // Usamos el selector que incluye todas las clases indicadas
+            const imgElement = listing.querySelector("img.i1ezuexe.atm_e2_idpfg4.atm_vy_idpfg4.atm_mk_stnw88.atm_e2_1osqo2v__1lzdix4.atm_vy_1osqo2v__1lzdix4.i1wndum8.atm_jp_pyzg9w.atm_jr_nyqth1.i16t4q3z.atm_vh_yfq0k3.dir.dir-ltr");
+            const image = imgElement ? imgElement.getAttribute("src") : "No image";
+    
+            return { title, price, rating, link, image };
         });
-    });
+    });    
 
     console.log("Datos obtenidos:", data);
     await browser.close();

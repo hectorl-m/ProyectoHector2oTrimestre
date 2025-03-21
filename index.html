@@ -71,8 +71,10 @@
             const formData = { city, checkin, checkout, adults, children, infants, pets };
             const results = await window.electronAPI.startScraping(formData);
 
+            // Después de obtener los datos
             document.getElementById('results').innerHTML = results.map(r => 
                 `<div class="bg-white p-4 shadow rounded-lg mb-4">
+                    <img src="${r.image}" alt="Imagen de ${r.title}" class="w-full h-48 object-cover rounded-lg mb-2">
                     <h3 class="text-lg font-semibold text-gray-800">${r.title}</h3>
                     <p class="text-gray-700">💰 <strong>Precio:</strong> ${r.price}</p>
                     <p class="text-gray-700">⭐ <strong>Calificación:</strong> ${r.rating}</p>
